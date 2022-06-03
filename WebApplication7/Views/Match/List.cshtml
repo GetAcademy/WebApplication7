@@ -1,0 +1,57 @@
+﻿@model Match[]
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListView</title>
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    HomeTeam
+                </th>
+                <th>
+                    AwayTeam
+                </th>
+                <th>
+                    Date
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var matches = Model;
+            }
+            @foreach (var match in matches)
+            {
+                <tr>
+                    <td>
+                        @match.HomeTeam
+                    </td>
+                    <td>
+                        @match.AwayTeam
+                    </td>
+                    <td>
+                        @match.Date
+                    </td>
+                    <td>
+                        <a asp-action="Single" asp-route-id="@match.Id">Se detaljer</a>
+                        <form action="post">
+                            <button asp-action="Single" asp-route-id="@match.Id">Se detaljer</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

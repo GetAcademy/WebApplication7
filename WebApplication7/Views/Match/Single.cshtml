@@ -1,0 +1,22 @@
+﻿@model Match
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListView</title>
+</head>
+<body>
+    @{
+        var match = Model;
+    }
+    @match.HomeTeam<br/>
+    @match.AwayTeam<br/>
+    @match.Date<br/>
+</body>
+</html>
